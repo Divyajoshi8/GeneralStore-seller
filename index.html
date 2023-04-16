@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Store Seller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+		<h1>General Store</h1>
+		<form onsubmit="saveToLocalStorage(event)" oninput="total.value = parseInt(price.value) *parseInt(quantity.value)">
+			<div>
+				<label >Item Name :</label>
+				<input type="text" id="item" name="item" required>
+			</div>
+			<div>
+				<label>Description :</label>
+				<input type="text" id="description" name="description" >
+			</div>
+			<div>
+				<label>Price :</label>
+				<input type="number" id="price" name="price" required>
+			</div>
+			<div>
+				<label>Quantity :</label>
+				<input type="number" id="quantity" name="quantity" >
+			</div>
+			<div>
+				<label>Total :</label>
+				<output type="number" for="price quantity" id="total" name="total">
+			</div>
+			\
+			<button type="submit" onclick="addItems(event)"> Submit </button>
+		</form>
+		<div>
+			<h2>Total Items</h2>
+			<ul id="Purchaselist"></ul>
+		</div>
+	</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
